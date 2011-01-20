@@ -6,29 +6,32 @@
     %meta{'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf8'}
     %title New Tab
     %link{:rel => 'stylesheet', :href => 'stylesheets/screen.css'}
+    %link{:rel => 'stylesheet', :href => 'stylesheets/icons.css'}
     %script{:type => 'text/javascript'}
       $(function() { $(document.body).favicons({insert: 'prependTo'}); })
   %body
-    %table.wrapper
-      %tr
-        %td.wrapper-td
-          %table.categories
-            -data = YAML.load(File.read('sites.yml'))
-            -width = (data.length/2.0).ceil
-            -td_width = 100.0/width
-            -[0,1].each do |i|
-              -categories = data[width*i,width]
-              %tr
-                -categories.each do |category|
-                  %td{:width => "%3.4f%%" % td_width}
-                    %h2=category['title']
-                    %ul
-                      -category['links'].each do |title, url|
-                        %li
-                          %a{:href=> url}
-                            -host = URI.parse(url).host
-                            -unless host =~ /\.dev$/
-                              -filename = "icons/#{host}.png"
-                              -`wget http://www.google.com/s2/favicons?domain=#{host} -O #{filename}` unless File.exists?(filename)
-                              %img{:src => filename}
-                            =title
+    -File.open('src/icons.scss', 'w') do |f|
+      %table.wrapper
+        %tr
+          %td.wrapper-td
+            %table.categories
+              -data = YAML.load(File.read('sites.yml'))
+              -width = (data.length/2.0).ceil
+              -td_width = 100.0/width
+              -[0,1].each do |i|
+                -categories = data[width*i,width]
+                %tr
+                  -categories.each do |category|
+                    %td{:width => "%3.4f%%" % td_width}
+                      %h2=category['title']
+                      %ul
+                        -category['links'].each do |title, url|
+                          %li
+                            %a{:href=> url}
+                              -host = URI.parse(url).host
+                              -unless host =~ /\.dev$/
+                                -filename = "icons/#{host}.png"
+                                -`wget http://www.google.com/s2/favicons?domain=#{host} -O #{filename}` unless File.exists?(filename)
+                                -f.puts "icon_#{host.gsub('.','_'} {background-image: inline-image(#{filename})}"
+                                %span{:class => "icon icon_#{host.gsub('.','_')}"}
+                              =title
