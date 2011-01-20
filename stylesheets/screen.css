@@ -1,0 +1,113 @@
+/* line 14, ../../../.rvm/gems/ree-1.8.7-2010.02@tools/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* line 17, ../../../.rvm/gems/ree-1.8.7-2010.02@tools/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+
+/* line 19, ../../../.rvm/gems/ree-1.8.7-2010.02@tools/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 21, ../../../.rvm/gems/ree-1.8.7-2010.02@tools/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+
+/* line 23, ../../../.rvm/gems/ree-1.8.7-2010.02@tools/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 25, ../../../.rvm/gems/ree-1.8.7-2010.02@tools/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: "" "";
+}
+/* line 96, ../../../.rvm/gems/ree-1.8.7-2010.02@tools/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+}
+
+/* line 27, ../../../.rvm/gems/ree-1.8.7-2010.02@tools/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 3, ../src/screen.scss */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+}
+
+/* line 8, ../src/screen.scss */
+body, html, .wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 13, ../src/screen.scss */
+.wrapper-td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* line 18, ../src/screen.scss */
+.categories {
+  margin: 0 auto;
+}
+/* line 20, ../src/screen.scss */
+.categories td {
+  vertical-align: top;
+  padding: 2em;
+  height: 50%;
+}
+/* line 25, ../src/screen.scss */
+.categories td h2 {
+  font-weight: bold;
+  font-size: 2em;
+  margin-bottom: .75em;
+  padding-left: 20px;
+}
+/* line 32, ../src/screen.scss */
+.categories td ul {
+  padding-left: 20px;
+}
+/* line 34, ../src/screen.scss */
+.categories td ul li {
+  margin-bottom: 1.5em;
+}
+/* line 37, ../src/screen.scss */
+.categories td ul li a {
+  text-decoration: none;
+}
+/* line 40, ../src/screen.scss */
+.categories td ul li a img {
+  vertical-align: middle;
+  float: left;
+  margin-left: -20px;
+}
