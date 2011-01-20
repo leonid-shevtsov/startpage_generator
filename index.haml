@@ -30,8 +30,11 @@
                             %a{:href=> url}
                               -host = URI.parse(url).host
                               -unless host =~ /\.dev$/
-                                -filename = "icons/#{host}.png"
-                                -`wget http://www.google.com/s2/favicons?domain=#{host} -O #{filename}` unless File.exists?(filename)
-                                -f.puts "icon_#{host.gsub('.','_'} {background-image: inline-image(#{filename})}"
+                                -filename = "images/#{host}.png"
+                                -unless File.exists?(filename)
+                                  -`wget http://www.google.com/s2/favicons?domain=#{host} -O #{filename}.bak`
+                                  -`pngcrush #{filename}.bak #{filename}`
+                                  -`rm #{filename}.bak`
+                                -f.puts ".icon_#{host.gsub('.','_')} { background-image: inline-image(\"#{host}.png\"); }"
                                 %span{:class => "icon icon_#{host.gsub('.','_')}"}
                               =title

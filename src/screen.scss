@@ -37,10 +37,13 @@ body, html, .wrapper {
         a {
           text-decoration: none;
 
-          img { 
+          span.icon { 
             vertical-align: middle;
             float: left;
             margin-left: -20px;
+            width: 16px;
+            height: 16px;
+            display: block;
           }
         }
       }

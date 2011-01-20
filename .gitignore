@@ -2,3 +2,5 @@
 .sass-cache
 sites.yml
 index.html
+src/icons.scss
+stylesheets/icons.css
