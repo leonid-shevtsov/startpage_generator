@@ -29,12 +29,22 @@
                           %li
                             %a{:href=> url}
                               -host = URI.parse(url).host
-                              -unless host =~ /\.dev$/
+                              -if host=~ /\.dev$/
+                                -`cp special_icons/dev.png images/dev.png` unless File.exists?('images/dev.png')
+                                -name='dev'
+                              -elsif url =~ /www.google.com\/analytics/
+                                -`cp special_icons/google_analytics.png images/google_analytics.png` unless File.exists?('images/google_analytics.png')
+                                -name='google_analytics'
+                              -elsif host =~ /\.basecamphq\.com$/
+                                -`cp special_icons/basecamp.png images/basecamp.png` unless File.exists?('images/basecamp.png')
+                                -name='basecamp'
+                              -else
                                 -filename = "images/#{host}.png"
                                 -unless File.exists?(filename)
                                   -`wget http://www.google.com/s2/favicons?domain=#{host} -O #{filename}.bak`
                                   -`pngcrush #{filename}.bak #{filename}`
                                   -`rm #{filename}.bak`
-                                -f.puts ".icon_#{host.gsub('.','_')} { background-image: inline-image(\"#{host}.png\"); }"
-                                %span{:class => "icon icon_#{host.gsub('.','_')}"}
+                                -name=host
+                              -f.puts ".icon_#{name.gsub('.','_')} { background-image: inline-image(\"#{name}.png\"); }"
+                              %span{:class => "icon icon_#{name.gsub('.','_')}"}
                               =title
