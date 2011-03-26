@@ -7,8 +7,6 @@
     %title New Tab
     %link{:rel => 'stylesheet', :href => 'stylesheets/screen.css'}
     %link{:rel => 'stylesheet', :href => 'stylesheets/icons.css'}
-    %script{:type => 'text/javascript'}
-      $(function() { $(document.body).favicons({insert: 'prependTo'}); })
   %body
     -File.open('src/icons.scss', 'w') do |f|
       %table.wrapper
